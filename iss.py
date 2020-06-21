@@ -37,7 +37,7 @@ def locate_iss_spacestation():
 
 def map_iss(lat, lon):
     """
-    Draw a world map and place ISS icon at lat,lon
+    Draw a world map and place ISS icon at lat, lon
     """
     screen = turtle.Screen()
     screen.setup(720, 360)
@@ -68,14 +68,13 @@ def compute_rise_time(lat, lon):
 def main():
  # Part A - get the astronauts and their crafts
     astro_dict = get_astronaut_info()
-    print('\nCurrent people in space: {}'.format(len(astro_dict)))
+    print('Current people in space: {}'.format(len(astro_dict)))
     for a in astro_dict:
         print(' - {} in {}'.format(a['name'], a['craft']))
 
     # Part B - get current position of ISS
     lat, lon = locate_iss_spacestation()
-    print(
-        '\nCurrent ISS coordinates: lat={:.02f} lon={:.02f}'.format(lat, lon))
+    print('Current ISS coordinates: lat={:.02f} lon={:.02f}'.format(lat, lon))
 
     # Part C - Render ISS on world map
     screen = None
@@ -97,7 +96,7 @@ def main():
     except RuntimeError as e:
         print('ERROR: problem loading graphics: ' + str(e))
 
-            # leave screen open until user clicks on it
+    # leave screen open until user clicks on it
     if screen is not None:
         print('Click on screen to exit...')
         screen.exitonclick()
