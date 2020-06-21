@@ -27,6 +27,7 @@ def locate_iss_spacestation():
     Get ISS position (lon, lat) as a float tuple
     """
     r = requests.get(base_url + '/iss-now.json')
+    
     # handles response from server just incase you get anything other than a 200 response
     r.raise_for_status()
     position = r.json()['iss_position']
