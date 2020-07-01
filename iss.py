@@ -67,7 +67,7 @@ def compute_rise_time(lat, lon):
 
 
 def main():
- # Part A - get the astronauts and their crafts
+    # Part A - get the astronauts and their crafts
     astro_dict = get_astronaut_info()
     print('Current people in space: {}'.format(len(astro_dict)))
     for a in astro_dict:
