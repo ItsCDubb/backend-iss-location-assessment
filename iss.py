@@ -11,6 +11,7 @@ world_map = 'map.gif'
 base_url = 'http://api.open-notify.org'
 
 def get_astronaut_info():
+
     """
     Get a list of the astronatuts currently in space.
     Include their names, the spacecraft that they are
@@ -21,13 +22,14 @@ def get_astronaut_info():
     r.raise_for_status()
     return r.json()['people']
 
+
 def locate_iss_spacestation():
     """
     Get the current geographic coordinates (lat/lon) of the space station, along with a timestamp.
     Get ISS position (lon, lat) as a float tuple
     """
     r = requests.get(base_url + '/iss-now.json')
-    
+
     # handles response from server just incase you get anything other than a 200 response
     r.raise_for_status()
     position = r.json()['iss_position']
@@ -101,6 +103,7 @@ def main():
     if screen is not None:
         print('Click on screen to exit...')
         screen.exitonclick()
+
 
 if __name__ == '__main__':
     main()
